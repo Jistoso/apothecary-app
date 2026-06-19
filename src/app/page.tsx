@@ -111,7 +111,7 @@ export default async function DashboardPage() {
     .select('quantity, unit, ingredients_master(id, name, flavor_profile, benefits, water_temp, steep_time)')
     .eq('user_id', user.id)
 
-  const rows = (inventory || []) as InventoryRow[]
+  const rows = (inventory || []) as unknown as InventoryRow[]
 
   // Weekly recommendation
   let weeklyBlend: WeeklyBlend | null = null

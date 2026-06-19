@@ -91,7 +91,7 @@ export async function POST(request: Request) {
       }
     }
 
-    const rows = inventory as InventoryRow[]
+    const rows = inventory as unknown as InventoryRow[]
 
     // Pre-filter by goal keywords
     const keywords = GOAL_KEYWORDS[goal] || []

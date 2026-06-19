@@ -46,7 +46,7 @@ export default function InventoryPage() {
       .from('user_inventory')
       .select('*, ingredients_master(id, name, type)')
       .order('created_at', { ascending: false })
-    if (data) setInventory(data as InventoryItem[])
+    if (data) setInventory(data as unknown as InventoryItem[])
   }
 
   async function handleSearch(term: string) {
